@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 // Paste your valid token here
-const JWT_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vam9ibWFuYWdlLmxvY2FsIiwiaWF0IjoxNzU3NTkyODUzLCJuYmYiOjE3NTc1OTI4NTMsImV4cCI6MTc1ODE5NzY1MywiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.7BZsSVHS2YSBkls9omEyf0W6Sx7oaf-_aBv9geX-sPY';
+const JWT_TOKEN = import.meta.env.VITE_JWT_TOKEN;
 
 const api = axios.create({
-  baseURL: 'http://jobmanage.local/wp-json/wp/v2',
+  baseURL: 'http://jobmanage.local/wp-json/all-events/v1',
   headers: {
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${JWT_TOKEN}`,

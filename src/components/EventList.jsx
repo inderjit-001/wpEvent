@@ -10,8 +10,11 @@ function EventList() {
       .catch((err) => console.error('API Error:', err.response?.data || err));
   }, []);
 
+  console.log("data", events)
+
   return (
     <div>
+
       {events.map((event) => (
         <div key={event.id}>
           <h2>{event.title.rendered}</h2>
