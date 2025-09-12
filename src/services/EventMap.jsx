@@ -6,7 +6,7 @@ function EventMap({ placeName }) {
 
   useEffect(() => {
     const fetchCoordinates = async () => {
-      const apiKey = 'AIzaSyDzh8-GocyaUY-Y1vg21IVA5M0vx6RuqI8';
+      const apiKey = import.meta.env.VITE_MAPS_API
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           placeName
@@ -36,7 +36,7 @@ function EventMap({ placeName }) {
       {!coords ? (
         <p>Loading map...</p>
       ) : (
-        <LoadScript googleMapsApiKey="AIzaSyDzh8-GocyaUY-Y1vg21IVA5M0vx6RuqI8">
+        <LoadScript googleMapsApiKey={import.meta.env.VITE_MAPS_API}>
           <GoogleMap
             mapContainerStyle={containerStyle}
             center={coords}
